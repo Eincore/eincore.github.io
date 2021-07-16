@@ -1,10 +1,20 @@
 <!DOCTYPE html>
-<html lang="en" data-color-mode="auto" data-light-theme="light" data-dark-theme="dark">
+<html>
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com"> 
+	<link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap" rel="stylesheet">
 
-    <title>Hej!</title>
-    <style>
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="theme-color" content="#ffffff">
+
+	<title>Eincore</title>
+
+	<style>
 * {
 	margin: 0px;
 	padding: 0px;
@@ -25,8 +35,6 @@ html {
 body {
 
 	background: rgb(56,40,89);
-	background: linear-gradient(180deg, rgba(56,40,89,1) 0%, rgba(37,33,63,1) 50%, rgba(37,33,63,1) 100%);
-
 	color: #ADA7D8;
 	font-size: 20px;
 	line-height: 32px;
@@ -34,9 +42,84 @@ body {
 	padding: 0px 20px 60px 20px;
 }
 
-    </style>
+section.content {
+	width: 872px;
+	margin: 20% auto;
+}
+
+h1 {
+	font-size: 150%;
+	line-height: 125%;
+	font-weight: 300;
+}
+	
+.services {
+	list-style: none;
+	padding-top: 60px;
+}
+
+	.services span {
+		opacity: .5;
+	}
+	
+	.services li {
+		float: left;
+	}
+	
+	.services li a {
+		color: #fff;
+		text-decoration: none;
+		
+		display: inline-block;
+		padding-right: 30px;
+		padding-bottom: 15px;
+		
+		opacity: .5;
+	   
+		-webkit-transition: opacity .5s;
+		-moz-transition: opacity .5s;
+		-ms-transition: opacity .5s;
+		-o-transition: opacity .5s;
+		transition: opacity .5s;
+	}
+	
+		.services li a:hover {
+			opacity: 1;
+		}
+		
+body.youtube { background: #c00; }
+body.instagram { background: #587bc2; }
+body.github { background: #4a535b; }
+body.email { background: #181818; }
+	</style>
+	
 </head>
+
 <body>
-Hej!
+	<section class="content">
+		<header class="top">
+			<h1>Eincore</h1>
+		</header>
+		
+		<ul class="services">
+			<li class="service youtube"><a href="/">Youtube</a></li>
+			<li class="service instagram"><a href="/">Instagram</a></li>
+			<li class="service github"><a href="/">Github</a></li>
+			<li class="service email"><a href="/">Email</a></li>
+		</ul>
+	</section>
+	
+<script>
+	var services = document.getElementsByClassName('service'),
+		len = services.length;
+		
+	while(len--) {
+		var me = services[len];
+		
+		me.addEventListener('mouseover', function(event) {
+			document.body.className = this.className.replace('service ', '');
+		}, false);
+	}
+</script>
 </body>
 </html>
